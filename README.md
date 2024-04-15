@@ -19,8 +19,17 @@ Jag behövde därefter gå in i filen build.gradle och ändra versionen av mater
 ```
 implementation 'com.google.android.material:material:1.1.0'
 ```
-
+Därefter skapade jag en knapp i activity_main.xml och placerade den över textView med hjälp av 
+constraints. Jag gav knappen ett id samt en text. Se koden nedan.
 ```
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/openSecondActivityButton"
+        app:layout_constraintBottom_toTopOf="@id/helloText"
+        android:text="@string/button_text"/>
 ```
 
 ## Följande grundsyn gäller dugga-svar:
