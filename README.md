@@ -80,6 +80,17 @@ I SecondActivity.java lade jag till Bundle för att möjliggöra att datan skick
 
         }
 ``` 
+Därefter skapade jag ett TextView-objekt i SecondActivity.java och hämtade min TextView med hjälp 
+av findById från activity_second.xml.
+``` 
+        if (extras != null) {
+            String name = extras.getString("name");
+            Log.d("asdasd:", name);
+            TextView myText = findViewById(R.id.intent_text);
+            myText.setText("Hej hej från tredje sidan! ".concat(name));
+
+        }
+```         
 ## Följande grundsyn gäller dugga-svar:
 
 - Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
