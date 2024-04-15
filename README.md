@@ -14,6 +14,7 @@ public class SecondActivity extends AppCompatActivity {
 
     }
 }
+
 ```
 Jag behövde därefter gå in i filen build.gradle och ändra versionen av material. Se koden nedan.
 ```
@@ -45,6 +46,16 @@ Intent för att öppna SecondActivity från MainActivity. Se koden nedan.
                 startActivity(intent);
             }
 ```
+I activity_second.xml skapade jag en ny TextView. Se koden nedan.
+```
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/second_activity_text"/>
+```
+
 Jag lade till text för knappen samt för den andra aktiviteten i strings.xml. Se koden nedan.
 ```
 <resources>
@@ -53,6 +64,22 @@ Jag lade till text för knappen samt för den andra aktiviteten i strings.xml. S
     <string name="second_activity_text">Hej Hej från andra sidan!</string>
 </resources>
 ```
+I MainActivity.java lade jag till Extras för att bifoga data. Se koden nedan.
+```
+    public void onClick(View view) {
+        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+        intent.putExtra("name", "Louise");
+        startActivity(intent);
+    }
+```
+I SecondActivity.java lade jag till Bundle för att möjliggöra att datan skickas med i mitt Intent.
+``` 
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String name = extras.getString("name");
+
+        }
+``` 
 ## Följande grundsyn gäller dugga-svar:
 
 - Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
