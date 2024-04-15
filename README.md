@@ -45,6 +45,14 @@ Intent för att öppna SecondActivity från MainActivity. Se koden nedan.
                 startActivity(intent);
             }
 ```
+Jag lade till text för knappen samt för den andra aktiviteten i strings.xml. Se koden nedan.
+```
+<resources>
+    <string name="app_name">Screens</string>
+    <string name="button_text">Click here!</string>
+    <string name="second_activity_text">Hej Hej från andra sidan!</string>
+</resources>
+```
 ## Följande grundsyn gäller dugga-svar:
 
 - Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
