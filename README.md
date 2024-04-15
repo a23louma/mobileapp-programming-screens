@@ -31,7 +31,20 @@ constraints. Jag gav knappen ett id samt en text. Se koden nedan.
         app:layout_constraintBottom_toTopOf="@id/helloText"
         android:text="@string/button_text"/>
 ```
+Därefter skapade jag en variabel "goToSecondActivityButton" i OnCreate-metoden i MainActivity.java
+och importerade klassen Button. Jag hämtade id för knappen från activity_main.xml. Jag lade till
+OnClickListener till knappen och behövde lägga till metoden OnClick. I metoden skapade jag ett nytt
+Intent för att öppna SecondActivity från MainActivity. Se koden nedan.
 
+```
+        Button goToSecondActivityButton = findViewById(R.id.openSecondActivityButton);
+        goToSecondActivityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
+            }
+```
 ## Följande grundsyn gäller dugga-svar:
 
 - Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
