@@ -72,6 +72,7 @@ I MainActivity.java lade jag till Extras för att bifoga data. Se koden nedan.
     }
 ```
 I SecondActivity.java lade jag till Bundle för att möjliggöra att datan skickas med i mitt Intent.
+Se koden nedan.
 ``` 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -80,7 +81,8 @@ I SecondActivity.java lade jag till Bundle för att möjliggöra att datan skick
         }
 ``` 
 Därefter skapade jag ett TextView-objekt i SecondActivity.java och hämtade min TextView med hjälp 
-av findViewById från activity_second.xml.
+av findViewById från activity_second.xml. Jag konkatenerade min string från extras med en annan
+string. Se koden nedan.
 ``` 
         if (extras != null) {
             String name = extras.getString("name");
@@ -89,8 +91,23 @@ av findViewById från activity_second.xml.
             myText.setText("Hej hej från andra sidan, hälsar ".concat(name));
 
         }
-```         
-
+```   
+Slutligen ändrade jag constraints för TextView i activity_second.xml för att placera texten i mitten
+samt ändrade färgen både på TextView och hela denna screen. Se koden nedan.
+```  
+    android:background="#F8C8DC"
+    tools:context=".SecondActivity">
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="#D8BFD8"
+        android:id="@+id/intent_text"/>
+```  
 
 Bilder läggs i samma mapp som markdown-filen.
 
