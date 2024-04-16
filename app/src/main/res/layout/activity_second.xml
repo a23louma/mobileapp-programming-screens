@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="@string/second_activity_text"
         android:id="@+id/intent_text"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

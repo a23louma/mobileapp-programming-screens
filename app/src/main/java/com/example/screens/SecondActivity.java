@@ -20,7 +20,7 @@ public class SecondActivity extends AppCompatActivity {
             String name = extras.getString("name");
             Log.d("asdasd:", name);
             TextView myText = findViewById(R.id.intent_text);
-            myText.setText("Hej hej från tredje sidan! ".concat(name));
+            myText.setText("Hej hej från andra sidan, hälsar ".concat(name));
 
         }
 

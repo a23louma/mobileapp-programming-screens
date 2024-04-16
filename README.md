@@ -46,22 +46,21 @@ Intent för att öppna SecondActivity från MainActivity. Se koden nedan.
                 startActivity(intent);
             }
 ```
-I activity_second.xml skapade jag en ny TextView. Se koden nedan.
+I activity_second.xml skapade jag en ny TextView med ett id. Se koden nedan.
 ```
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="@string/second_activity_text"/>
+        android:id="@+id/intent_text"/>
 ```
 
-Jag lade till text för knappen samt för den andra aktiviteten i strings.xml. Se koden nedan.
+Jag lade till text för knappen i en string i strings.xml. Se koden nedan.
 ```
 <resources>
     <string name="app_name">Screens</string>
     <string name="button_text">Click here!</string>
-    <string name="second_activity_text">Hej Hej från andra sidan!</string>
 </resources>
 ```
 I MainActivity.java lade jag till Extras för att bifoga data. Se koden nedan.
@@ -81,24 +80,16 @@ I SecondActivity.java lade jag till Bundle för att möjliggöra att datan skick
         }
 ``` 
 Därefter skapade jag ett TextView-objekt i SecondActivity.java och hämtade min TextView med hjälp 
-av findById från activity_second.xml.
+av findViewById från activity_second.xml.
 ``` 
         if (extras != null) {
             String name = extras.getString("name");
             Log.d("asdasd:", name);
             TextView myText = findViewById(R.id.intent_text);
-            myText.setText("Hej hej från tredje sidan! ".concat(name));
+            myText.setText("Hej hej från andra sidan, hälsar ".concat(name));
 
         }
 ```         
-## Följande grundsyn gäller dugga-svar:
-
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
-
 
 
 Bilder läggs i samma mapp som markdown-filen.

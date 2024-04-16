@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">Screens</string>
     <string name="button_text">Click here!</string>
-    <string name="second_activity_text">Hej Hej från andra sidan!</string>
 </resources>
