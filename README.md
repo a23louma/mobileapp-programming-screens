@@ -109,7 +109,8 @@ samt ändrade färgen både på TextView och hela denna screen. Se koden nedan.
         android:id="@+id/intent_text"/>
 ```  
 
-Bilder läggs i samma mapp som markdown-filen.
+Bifogat i projektet finns två skärmdumpar, en från MainActivity och en från SecondActivity.
 
-![](android.png)
+![](SecondActivity.png)
+![](MainActivity.png)
 
